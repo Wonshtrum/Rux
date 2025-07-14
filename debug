@@ -1,0 +1,5 @@
+rm -f main
+rustc main.rs --target=x86_64-unknown-none -Cpanic=abort -Copt-level=z -Crelocation-model=static
+objcopy --remove-section=.comment main
+objdump -d main
+ls -al main
